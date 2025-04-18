@@ -4,7 +4,7 @@ import { Layer, Vapor, ZStack } from '@realsee/vapor';
 import '@realsee/vapor/vapor.css';
 import { FC } from 'react';
 import { Bottom } from './bottom/Bottom';
-import { work } from './data-source/work';
+import workJSON from './data-source/work.json';
 import { Front } from './front/Front';
 import { MainPanel } from './main-panel/MainPanel';
 import { GuideToolbar } from './overlays/GuideToolbar';
@@ -87,6 +87,7 @@ const App: FC<AppPropTypes> = ({ safeArea, onBack, work, width, height, theme })
       theme={theme}
     >
       {/* Five 引擎提供者，注入 VR 场景数据 */}
+      {/* @ts-expect-error SDK类型不兼容 */}
       <FiveProvider work={work}>
         {/*
           ZStack 层叠布局容器
@@ -141,6 +142,6 @@ export { App };
  */
 export default function RealseeApp() {
   return <Store>
-    <App safeArea={{ insetTop: 0 }} work={work} />
+    <App safeArea={{ insetTop: 0 }} work={workJSON} />
   </Store>
 }
