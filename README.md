@@ -1,22 +1,34 @@
 # Vapor 示例项目
 
-这是一个展示如何使用 [@realsee/vapor](https://vapor.realsee.cn/) 组件库的示例项目。该项目使用 Vite 和 React 18 构建，旨在帮助开发者快速理解和掌握 Vapor 组件库的使用方法。
+这是一个使用 [@realsee/vapor](https://vapor.realsee.cn/) 组件库构建的如视 VR 看房应用示例。该项目展示了如何使用 Vapor 组件库创建美观、交互丰富的 Web 应用，特别是如何与 @realsee/five VR 引擎集成，实现沉浸式看房体验。
 
-## 功能亮点
+## 项目概述
 
-- 🎨 展示了 Vapor 的主题系统（柔美弧、简约方、极简）
-- 🧩 包含多种常用组件的使用示例
-- 📱 响应式设计，适配不同设备
-- 🔄 交互组件展示（模态框、底部弹层、Toast 等）
+本示例项目演示了一个完整的 VR 看房应用，包括以下主要功能：
+
+- 🏠 VR 全景看房核心功能
+- 🔄 多种浏览模式切换（全景、户型图等）
+- 🧭 空间导航与房间切换
+- 🎮 交互控制（缩放、旋转等）
+- 🎨 美观的 UI 界面与动画效果
+- 📱 响应式设计，适配不同设备尺寸
 
 ## 技术栈
 
-- [Vite](https://vitejs.dev/) - 构建工具
 - [React 18](https://react.dev/) - 用户界面库
 - [TypeScript](https://www.typescriptlang.org/) - 类型安全的 JavaScript
+- [Vite](https://vitejs.dev/) - 现代构建工具
 - [@realsee/vapor](https://vapor.realsee.cn/) - 如视 VR 前端组件库
+- [@realsee/five](https://developers.realsee.com/five/) - 如视 VR 引擎
+- [Sass](https://sass-lang.com/) - CSS 预处理器
+- [Lottie](https://airbnb.design/lottie/) - 矢量动画库
 
 ## 开始使用
+
+### 环境要求
+
+- Node.js >= 16.0.0
+- npm >= 8.0.0
 
 ### 安装依赖
 
@@ -26,15 +38,23 @@ npm install
 
 ### 开发模式
 
+启动开发服务器：
+
 ```bash
 npm run dev
 ```
 
+默认情况下，服务器将在 http://localhost:5173 上运行。
+
 ### 构建项目
+
+构建生产版本：
 
 ```bash
 npm run build
 ```
+
+构建产物将输出到 `dist` 目录。
 
 ### 预览构建产物
 
@@ -46,61 +66,141 @@ npm run preview
 
 ```
 vapor-sample/
-├── public/          # 静态资源目录
-├── src/             # 源代码目录
-│   ├── assets/      # 图片等资源
-│   ├── App.css      # 应用样式
-│   ├── App.tsx      # 主应用组件
-│   ├── index.css    # 全局样式
-│   └── main.tsx     # 应用入口
-├── index.html       # HTML 模板
-├── package.json     # 项目配置
-├── tsconfig.json    # TypeScript 配置
-└── vite.config.ts   # Vite 配置
+├── public/                  # 静态资源目录
+├── src/                     # 源代码目录
+│   ├── vr/                  # VR 相关组件
+│   ├── front/               # 界面前景组件
+│   ├── bottom/              # 底部控制组件
+│   ├── main-panel/          # 主面板组件
+│   ├── overlays/            # 浮层组件
+│   ├── stores/              # 状态管理
+│   ├── data-source/         # 数据源
+│   ├── utils/               # 工具函数
+│   ├── App.tsx              # 主应用组件
+│   ├── Store.tsx            # 全局状态管理
+│   └── main.tsx             # 应用入口
+├── index.html               # HTML 模板
+├── package.json             # 项目配置
+├── tsconfig.json            # TypeScript 配置
+└── vite.config.ts           # Vite 配置
 ```
 
-## 组件展示
+## 目录说明
 
-本示例项目展示了以下 Vapor 组件的用法：
+- `vr/`: 包含 VR 场景渲染和控制相关组件
+- `front/`: 前景 UI 组件，包括顶部导航栏和标题
+- `bottom/`: 底部控制栏组件，提供模式切换等功能
+- `main-panel/`: 主面板组件，包含详细信息展示
+- `overlays/`: 浮层组件，如对话框、工具栏等
+- `stores/`: 状态管理逻辑，基于 Context API
+- `data-source/`: 数据源，包含 VR 场景数据
+- `utils/`: 通用工具函数和助手方法
 
-- Vapor - 顶层容器组件
-- Theme - 主题组件
-- Text - 文本组件
-- Button - 按钮组件
-- Card - 卡片组件
-- Avatar - 头像组件
-- HStack/VStack - 布局组件
-- TitleBar - 顶部标题栏
-- BottomBar - 底部导航栏
-- BottomSheet - 底部弹层
-- Modal - 模态框
-- Toast - 提示消息
-- TabView - 标签页组件
-- Box - 盒子容器
-- Icon - 图标组件
+## 主要组件说明
 
-## 主题自定义
+### 1. VR 组件
 
-Vapor 组件库支持三种主题：
+负责渲染和控制 VR 场景，集成了 @realsee/five 引擎。
 
-- 柔美弧 (arc_beauty) - 默认主题，圆角设计
-- 简约方 (square_simple) - 方角设计
-- 极简 (minimalist) - 简约设计
+### 2. 前景导航组件
 
-在示例项目中，你可以点击"主题切换"部分的按钮来切换不同的主题风格。
+处理顶部导航栏、标题和控制按钮，提供用户交互入口。
 
-## 布局系统
+### 3. 底部控制栏
 
-Vapor 使用类似 SwiftUI 的布局系统，主要包括：
+提供模式切换、房间选择等功能。
 
-- HStack - 水平布局容器
-- VStack - 垂直布局容器
-- ZStack - 层叠布局容器
+### 4. 主面板组件
 
-这些布局组件支持对齐方式、间距等属性，方便构建复杂的用户界面。
+显示详细信息，如房间数据、户型说明等。
+
+### 5. 浮层组件
+
+提供各种覆盖在主界面上的交互层，如分享对话框、工具栏等。
+
+## Vapor 组件使用示例
+
+### 基础容器
+
+```tsx
+<Vapor width='100%' height='100%' theme='arc_beauty'>
+  {/* 应用内容 */}
+</Vapor>
+```
+
+### 布局组件
+
+```tsx
+<ZStack width='100%' height='100%'>
+  {/* VR 内容 */}
+  <VR />
+
+  {/* 前景 UI */}
+  <Front />
+</ZStack>
+```
+
+### 交互组件
+
+```tsx
+<Button
+  icon={<Icon symbol={ShareSymbol} />}
+  onClick={() => dispatchShare({})}
+/>
+```
+
+## 定制主题
+
+Vapor 支持三种内置主题：
+
+- `arc_beauty` - 柔美弧形主题（默认）
+- `square_simple` - 简约方形主题
+- `minimalist` - 极简主题
+
+可以通过 `Vapor` 组件的 `theme` 属性进行设置。
+
+## 响应式设计
+
+本示例项目使用 Vapor 的响应式 API 进行布局适配：
+
+```tsx
+const { match, orientation } = useDimension()
+
+// 根据屏幕尺寸调整样式
+const padding = match('sm') ? '16px' : match('md') ? '24px' : '32px'
+```
+
+## 常见问题
+
+### Q: 项目启动时报错如何解决？
+
+A: 请确保安装了所有依赖，并且 Node.js 版本符合要求。
+
+### Q: 如何修改 VR 场景数据？
+
+A: 可以在 `src/data-source/work.ts` 文件中修改场景数据。
+
+### Q: 如何切换默认主题？
+
+A: 在 `App.tsx` 中修改 `Vapor` 组件的 `theme` 属性。
 
 ## 参考资源
 
 - [Vapor 组件库文档](https://vapor.realsee.cn/)
+- [Five SDK 开发文档](https://developers.realsee.com/five/)
 - [React 官方文档](https://react.dev/learn)
 - [Vite 官方文档](https://vitejs.dev/guide/)
+
+## 贡献指南
+
+欢迎贡献代码、报告问题或提供改进建议！
+
+1. Fork 项目仓库
+2. 创建特性分支: `git checkout -b feature/amazing-feature`
+3. 提交更改: `git commit -m 'Add some amazing feature'`
+4. 推送到分支: `git push origin feature/amazing-feature`
+5. 提交 Pull Request
+
+## 许可证
+
+本项目由 BEIKE REALSEE TECHNOLOGY (HK) LIMITED 开发和维护。
