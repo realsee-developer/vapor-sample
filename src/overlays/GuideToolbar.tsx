@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { ArrowDownSymbol, Button, Card, CardPropTypes, CardSlider, Divide, HStack, Icon, PauseSymbol, PlaySymbol, Text, Toolbar, useDimension, VStack } from '@realsee/vapor';
 import { FC, MouseEvent, useCallback, useState } from 'react';
 import { useGuideToolbarStore } from '../stores/guide-toolbar';

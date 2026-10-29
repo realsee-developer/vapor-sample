@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 interface Listener<T extends any[]> {
   on(fn: (...args: T) => void): () => void;
   emit(...args: T): void;

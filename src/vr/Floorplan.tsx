@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { unsafe__useFiveInstance } from "@realsee/five/react";
 import { TopviewFloorplanPlugin } from "@realsee/dnalogel";
 import { useEffect, useRef } from "react";

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { FC, useState } from 'react';
 import { useModalPadding } from '@realsee/vapor';
 

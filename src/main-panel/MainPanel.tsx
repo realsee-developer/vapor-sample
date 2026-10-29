@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { ModalRoute, RouterModal } from '@realsee/vapor';
 import { FC } from "react";
 import { useMainPanelStore } from '../stores/main-panel';

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { FiveCanvas } from '@realsee/five/react';
 import { useDimension } from '@realsee/vapor';
 import { FC } from 'react';

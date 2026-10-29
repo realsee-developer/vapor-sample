@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { Card, Fieldset, Grid, Icon, Modal, RealseeSymbol, TabView, Text, VStack, ZStack, useDimension } from '@realsee/vapor';
 import { FC } from 'react';
 import { useSpaceDialogStore } from '../stores/space-dialog';

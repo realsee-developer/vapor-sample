@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { ArrowLeftSymbol, Button, ExitSymbol, Icon, IconSymbol, IconSymbolFC, InfoSymbol, MusicSymbol, ShareSymbol, TitleBar, useDispatchOverlayComponent } from '@realsee/vapor';
 import { useLottie } from 'lottie-react';
 import { FC, useState } from 'react';

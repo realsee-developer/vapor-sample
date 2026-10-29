@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { LooseWork } from "@realsee/five";
 import { createFiveProvider } from "@realsee/five/react";
 import { Layer, Vapor, ZStack } from "@realsee/vapor";

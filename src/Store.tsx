@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 /**
  * Vapor Sample 应用的全局状态管理
  *

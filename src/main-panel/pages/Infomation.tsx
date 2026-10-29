@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { ArrowRightSymbol, Button, Card, Divide, Fieldset, Font, HStack, Icon, Image, Text, useDimension, useModalRouter, VStack } from '@realsee/vapor';
 import { FC } from 'react';
 

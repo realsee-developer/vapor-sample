@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: PolyForm-Noncommercial-1.0.0
 import { VStack, ZStack, useDimension } from "@realsee/vapor";
 import { FC, PropsWithChildren } from "react";
 import { Head } from "./Head";
